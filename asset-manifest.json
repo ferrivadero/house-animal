@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/house-animal/static/css/main.d8811b14.css",
-    "main.js": "/house-animal/static/js/main.6d5b6d0c.js",
+    "main.js": "/house-animal/static/js/main.6520283c.js",
     "static/media/logoAnimal2.png": "/house-animal/static/media/logoAnimal2.12544112c377e1697f30.png",
     "index.html": "/house-animal/index.html",
     "main.d8811b14.css.map": "/house-animal/static/css/main.d8811b14.css.map",
-    "main.6d5b6d0c.js.map": "/house-animal/static/js/main.6d5b6d0c.js.map"
+    "main.6520283c.js.map": "/house-animal/static/js/main.6520283c.js.map"
   },
   "entrypoints": [
     "static/css/main.d8811b14.css",
-    "static/js/main.6d5b6d0c.js"
+    "static/js/main.6520283c.js"
   ]
 }
