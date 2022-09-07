@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../imagenes/logoAnimal2.png";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./Header.css";
+import CartWidget from "./CartWidget";
 
 const NavBar = () => {
     return (
@@ -14,7 +14,7 @@ const NavBar = () => {
                     <a href="">Accesorios</a>
                     <a href="">Ofertas</a>
                 </nav>
-                <ShoppingCartIcon fontSize="large"  /> 
+                <CartWidget /> 
         </header>
     );
 };
