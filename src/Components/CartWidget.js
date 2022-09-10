@@ -1,10 +1,10 @@
 import React from "react";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 
 const CartWidget = () => {
     return (
-    <ShoppingCartIcon fontSize="large"  />
+    <ShoppingCartOutlinedIcon fontSize="large"  />
     )
 }
 
