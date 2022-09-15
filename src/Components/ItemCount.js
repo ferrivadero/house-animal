@@ -8,28 +8,19 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     const [contador, setContador] = useState(initial)
 
-    const sumar = () => {
-        if (stock > contador) {
-        setContador(contador + 1)
-        }
-    }
+    const sumar = () => stock > contador && setContador(contador + 1)
 
-    const restar = () => {
-        if (contador >= 2) {
-            setContador(contador - 1)
-        }
-        
-    }
+    const restar = () => contador >= 2 && setContador(contador - 1)
 
     return(
         <> 
         <div style={style.contenedor}> 
         <div style={style.contenedorContador}>
-        <button style={style.boton} onClick={restar}>-</button>
+        <Button disabled= {contador === initial} onClick={restar}>-</Button>
         <div style={style.contador} >{contador}</div>
-        <button style={style.boton} onClick={sumar} >+</button>
+        <Button disabled= {contador === stock} onClick={sumar} >+</Button>
         </div>
-        <Button onClick={onAdd} variant="outlined">Agregar al carrito</Button>
+        <Button size="small" onClick={onAdd} variant="outlined">Agregar al carrito</Button>
         </div>
         </>
     )
@@ -42,17 +33,9 @@ const style ={
     justifyContent: "flex-end",
     flexWrap: "nowrap",
     alignItems: "center",
-    backgroundColor: "aliceblue",
-    height: 200,
-    width: 200,
+    height: "auto",
+    width: "auto",
     margin: "auto"
-},
-
-    boton:{
-    border: "none",
-    background: "none",
-    fontSize: 28,
-    alignItems: "center"
 },
 
     contador:{
@@ -60,9 +43,8 @@ const style ={
 },
 
     contenedorContador:{
-    backgroundColor: "rgb(230, 230, 230)",
     justifyContent: "space-between",
-    height: 30,
+    height: 25,
     width: 180,
     display: "flex",
     flexDirection: "row",

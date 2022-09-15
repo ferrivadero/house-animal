@@ -1,18 +1,24 @@
-import React from "react";
-import ItemCount from './ItemCount';
+import React, { useState, useEffect } from "react";
+import  {productos}  from '../assets/productos';
+import  {customFetch}  from '../utils/customFetch';
+import  ItemList  from "../Components/ItemList";
+
+
+
 
 const ItemListContainer = ({greeting}) => {
     
-    const onAdd = () => {
-            console.log(`se agregaron productos al carro`)
-        
-    }
-    
+    const [listaProductos, setListaProductos] = useState([])
+
+    useEffect(() => {
+        customFetch(productos)
+        .then(res => setListaProductos(res))
+    }, [])
     
     return (
         <>
         <h1 style={style.titulo}>{greeting}</h1>
-        <ItemCount initial = {1} stock = {7} onAdd = {onAdd}/>
+        <ItemList listaDeProductos={listaProductos}/>
         </>
     )
 }
