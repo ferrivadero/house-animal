@@ -16,9 +16,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <> 
         <div style={style.contenedor}> 
         <div style={style.contenedorContador}>
-        <Button disabled= {contador === initial} onClick={restar}>-</Button>
+        <Button style={style.contador} disabled= {contador === initial} onClick={restar}>-</Button>
         <div style={style.contador} >{contador}</div>
-        <Button disabled= {contador === stock} onClick={sumar} >+</Button>
+        <Button style={style.contador} disabled= {contador === stock} onClick={sumar} >+</Button>
         </div>
         <Button size="small" onClick={onAdd} variant="outlined">Agregar al carrito</Button>
         </div>
@@ -39,12 +39,12 @@ const style ={
 },
 
     contador:{
-    fontSize: 20,
+    fontSize: 18,
 },
 
     contenedorContador:{
     justifyContent: "space-between",
-    height: 25,
+    height: 22,
     width: 180,
     display: "flex",
     flexDirection: "row",

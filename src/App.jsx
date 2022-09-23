@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from  './Components/NavBar';
 import ItemListContainer from './Components/ItemListContainer';
+import  ItemDetailContainer  from "./Components/ItemDetailContainer";
 
 
 const App = ()=>{
@@ -11,6 +12,7 @@ const App = ()=>{
     <> 
     <NavBar />
     <ItemListContainer greeting= {titulo}/>
+    <ItemDetailContainer/>
     </>
     )
 } 

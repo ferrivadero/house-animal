@@ -1,27 +1,22 @@
 import "./ItemStyle.css";
-//import ItemCount  from "../Components/ItemCount";
-import { Button } from "@mui/material";
+import ItemCount  from "../Components/ItemCount";
 
 const Item = ({ productos }) => {
 
-  //const onAdd = () => {
- //   console.log(`se agregaron productos al carro`)
-//}
+  const onAdd = () => {
+    console.log(`se agregaron productos al carro`)
+}
   
   return (
     <>   
     <div className="card">
         <img className="imagenCard" src={`${productos.imagen}`} alt="imagen" />
-        <h3>{productos.nombre}</h3>
+        <h3>{productos.name}</h3>
         <h4>$ {productos.precio} </h4>
-        <Button variant="outlined">Ver Detalles</Button>
+        <ItemCount initial = {1} stock = {productos.stock} onAdd = {onAdd}/>
     </div>
     </>
   );
 };
-
-//<ItemCount initial = {1} stock = {productos.stock} onAdd = {onAdd}/>
-
-
 
 export default Item;

@@ -1,24 +1,38 @@
 import React, { useState, useEffect } from "react";
-import  {productos}  from '../assets/productos';
-import  {customFetch}  from '../utils/customFetch';
 import  ItemList  from "../Components/ItemList";
-
-
+import LinearProgress from '@mui/material/LinearProgress';
 
 
 const ItemListContainer = ({greeting}) => {
     
     const [listaProductos, setListaProductos] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        customFetch(productos)
-        .then(res => setListaProductos(res))
+        const customFetch = async () => {
+            try{
+                const respuesta = await fetch("https://632bca1c1aabd837398bdca5.mockapi.io/productos")
+                const data = await respuesta.json()
+                setListaProductos(data)
+            }
+            catch{
+                console.log("error");
+            }
+            finally{
+                setLoading(false)
+            }}
+            customFetch()
     }, [])
     
     return (
-        <>
+        <>             
         <h1 style={style.titulo}>{greeting}</h1>
-        <ItemList listaDeProductos={listaProductos}/>
+        {
+            loading 
+            ?   <LinearProgress />
+            : <ItemList listaDeProductos={listaProductos}/>
+        }
+        
         </>
     )
 }
