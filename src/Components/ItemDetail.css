@@ -6,9 +6,13 @@
     margin: auto;
     margin-bottom: 50px;
     border: solid 1px black;
+    margin-top: 15px;
 }
 .imagen img{
-    height: 400px;
+    height: 380px;
+    object-fit: contain;
+    padding: 5px;
+    padding-right: 10px;
 }
 
 h1{
@@ -20,6 +24,7 @@ h1{
     font-size: 18px;
     padding: 10px;
     padding-left: 0;
+    height: 165px;
 }
 .contenedorPrecioContador{
     display: grid;

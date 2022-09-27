@@ -1,20 +1,29 @@
 import React from "react";
 import logo from "../imagenes/logoAnimal2.png";
 import CartWidget from "./CartWidget";
+import Nav from "../Components/Nav";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
+
+    const categorias = [
+        { id: 0, nombre: "Inicio", ruta: "/"},
+        { id: 1, nombre: "Perros", ruta: "/categoria/perros"},
+        { id: 2, nombre: "Gatos", ruta: "/categoria/gatos"},
+        { id: 3, nombre: "Accesorios", ruta: "/categoria/accesorios"}
+        
+    ]
+
     return (
         <header style={style.header}>
             <div style={style.contenedor}>
-                <img style={style.logo} src={logo} alt="logo" />
-                <nav>
-                    <a style={style.a}  href="#">Inicio</a>
-                    <a style={style.a} href="#">Perros</a>
-                    <a style={style.a} href="#">Gatos</a>
-                    <a style={style.a} href="#">Accesorios</a>
-                    <a style={style.a} href="#">Ofertas</a>
-                </nav>
-                <CartWidget/> 
+                <Link to="/">
+                    <img style={style.logo} src={logo} alt="logo" />
+                </Link>
+                <Nav categorias= {categorias}/>
+                <Link to="/carrito">
+                    <CartWidget/> 
+                </Link>
             </div>
         </header>
     );
@@ -43,12 +52,6 @@ const style = {
     logo:{
         width: 180,
         height: 160
-},
-
-    a:{
-        padding: 15,
-        textDecoration: "none",
-        color: "black"
 }
 }
 

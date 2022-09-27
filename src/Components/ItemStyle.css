@@ -7,7 +7,7 @@
 
 .imagenCard{
     width: 170px;
-    height: 190px;
+    height: 210px;
     object-fit: contain;
     padding-top: 5px;
 }
@@ -17,4 +17,9 @@ h3{
     height: 30px;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.boton{
+    text-decoration: none;
+    color: brown;
 }
