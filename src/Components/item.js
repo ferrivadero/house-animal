@@ -13,7 +13,7 @@ const Item = ({ productos }) => {
         <img className="imagenCard" src={`${productos.imagen}`} alt="imagen" />
         <h3>{productos.name}</h3>
         <h4>${productos.precio} </h4>
-        <Button><Link className="boton" to = {`/productos/${productos.id}`} variant="text">Ver Detalles</Link></Button>
+        <Button><Link className="boton" to = {`/house-animal/productos/${productos.id}`} variant="text">Ver Detalles</Link></Button>
     </div>
     </>
   );

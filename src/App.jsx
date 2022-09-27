@@ -16,10 +16,10 @@ const App = ()=>{
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element= {<ItemListContainer greeting= {titulo}/>}/>
-        <Route path="/categoria/:IdCategoria" element= {<ItemListContainer greeting= {titulo}/>}/>
-        <Route path="/productos/:IdProducto" element={ <ItemDetailContainer/> }/>
-        <Route path="/carrito" element={ < Carrito /> } />
+        <Route path="/house-animal/" element= {<ItemListContainer greeting= {titulo}/>}/>
+        <Route path="/house-animal/categoria/:IdCategoria" element= {<ItemListContainer greeting= {titulo}/>}/>
+        <Route path="/house-animal/productos/:IdProducto" element={ <ItemDetailContainer/> }/>
+        <Route path="/house-animal/carrito" element={ < Carrito /> } />
       </Routes>
     </BrowserRouter> 
     </>

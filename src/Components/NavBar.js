@@ -7,21 +7,21 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
 
     const categorias = [
-        { id: 0, nombre: "Inicio", ruta: "/"},
-        { id: 1, nombre: "Perros", ruta: "/categoria/perros"},
-        { id: 2, nombre: "Gatos", ruta: "/categoria/gatos"},
-        { id: 3, nombre: "Accesorios", ruta: "/categoria/accesorios"}
+        { id: 0, nombre: "Inicio", ruta: "/house-animal/"},
+        { id: 1, nombre: "Perros", ruta: "/house-animal/categoria/perros"},
+        { id: 2, nombre: "Gatos", ruta: "/house-animal/categoria/gatos"},
+        { id: 3, nombre: "Accesorios", ruta: "/house-animal/categoria/accesorios"}
         
     ]
 
     return (
         <header style={style.header}>
             <div style={style.contenedor}>
-                <Link to="/">
+                <Link to="/house-animal/">
                     <img style={style.logo} src={logo} alt="logo" />
                 </Link>
                 <Nav categorias= {categorias}/>
-                <Link to="/carrito">
+                <Link to="/house-animal/carrito">
                     <CartWidget/> 
                 </Link>
             </div>
