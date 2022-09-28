@@ -11,7 +11,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const sumar = () => stock > contador && setContador(contador + 1)
 
     const restar = () => contador >= 2 && setContador(contador - 1)
-
+    
     return(
         <> 
         <div style={style.contenedor}> 

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
 
     const categorias = [
-        { id: 0, nombre: "Inicio", ruta: "/house-animal/"},
+        { id: 0, nombre: "Inicio", ruta: "/house-animal"},
         { id: 1, nombre: "Perros", ruta: "/house-animal/categoria/perros"},
         { id: 2, nombre: "Gatos", ruta: "/house-animal/categoria/gatos"},
         { id: 3, nombre: "Accesorios", ruta: "/house-animal/categoria/accesorios"}
