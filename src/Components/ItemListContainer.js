@@ -30,7 +30,6 @@ const ItemListContainer = ({greeting}) => {
             }}
             customFetch()
     }, [IdCategoria])
-    console.log(IdCategoria);
     
     return (
         <>             

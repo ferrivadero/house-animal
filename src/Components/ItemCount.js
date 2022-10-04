@@ -20,7 +20,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <div style={style.contador} >{contador}</div>
         <Button style={style.contador} disabled= {contador === stock} onClick={sumar} >+</Button>
         </div>
-        <Button size="small" onClick={onAdd} variant="outlined">Agregar al carrito</Button>
+        <Button size="small" onClick={() => {onAdd(contador)}} variant="outlined">Agregar al carrito</Button>
         </div>
         </>
     )

@@ -1,17 +1,20 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import "../Components/ItemDetail.css"
 import ItemCount from "../Components/ItemCount";
 import  ItemCompra  from "./ItemCompra";
+import { CartContext } from "../context/CartContext";
 
 
 const ItemDetail = ({ product }) => {
+    const [agregar, setAgregar] = useState(true)
+    const { anadir } = useContext(CartContext)
 
-    const onAdd = () => {
-        console.log(`se agregaron productos al carro`)
+    const onAdd = (contador) => {
+        anadir(product, contador)
         setAgregar(false)
     }
 
-    const [agregar, setAgregar] = useState(true)
+
 
     return (
         <>  
