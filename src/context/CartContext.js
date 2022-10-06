@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 
 export const CartContext = createContext();
@@ -7,8 +7,18 @@ export const CartContext = createContext();
 const CustomProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
+    const [cantidadTotal, setCantidadTotal] = useState(0)
+    const [totalDeCompra, setTotalDeCompra] = useState(0)
+
+
+    useEffect(() => {
+        obtenerCantidad()
+        totalCompra()
+    }, [cart])
+    
 
     console.log("carrito:", cart);
+    console.log("total compra", totalDeCompra);
 
     const anadir = (producto, cantidad) => {
         if (estaEnLista(producto.id)){
@@ -33,8 +43,24 @@ const CustomProvider = ({ children }) => {
         setCart([])
     }
 
+    const obtenerCantidad = () => {
+        let cantidadTotal = 0
+        cart.forEach((prod)=>{
+            cantidadTotal = cantidadTotal + prod.cantidad
+        })
+        setCantidadTotal(cantidadTotal)
+    }
+
+    const totalCompra = () => {
+        let totalDeCompra = 0
+        cart.forEach((prod)=>{
+            totalDeCompra = totalDeCompra + prod.precio * prod.cantidad
+        })
+        setTotalDeCompra(totalDeCompra)
+    }
+
     return (
-        <CartContext.Provider value={{ cart, anadir, borrar, reset }} >
+        <CartContext.Provider value={{totalDeCompra, cantidadTotal, cart, anadir, borrar, reset }} >
         {children}
         </CartContext.Provider>
     )
