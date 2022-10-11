@@ -2,6 +2,8 @@ import {React, useEffect, useState} from 'react';
 import ItemDetail from '../Components/ItemDetail';
 import LinearProgress from '@mui/material/LinearProgress';
 import { useParams } from "react-router-dom";
+import { db } from "../firebase/firebase";
+import { getDoc, doc, collection } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -10,22 +12,25 @@ const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
 
-    const URL_PRODUCTOS = "https://632bca1c1aabd837398bdca5.mockapi.io/productos/"
-
     useEffect(() => {
-        const GetItem = async () => {
-            try{
-                const respuesta = await fetch(`${URL_PRODUCTOS}${IdProducto}`)
-                const data = await respuesta.json()
-                setProducto(data)
-            }
-            catch{
-                console.log("error");
-            }
-            finally{
-                setLoading(false)
-            }}
-            GetItem()
+
+        const productCollection = collection(db, 'productos')
+        const refDoc = doc(productCollection, IdProducto)
+        getDoc(refDoc)
+        .then((result)=>{
+            setProducto(
+                {
+                    id: result.id,
+                    ...result.data(),
+                }
+            )
+        })
+        .catch(()=>{
+            console.log("error")
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
     }, [IdProducto])
 
     return(

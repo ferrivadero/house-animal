@@ -16,10 +16,6 @@ const CustomProvider = ({ children }) => {
         totalCompra()
     }, [cart])
     
-
-    console.log("carrito:", cart);
-    console.log("total compra", totalDeCompra);
-
     const anadir = (producto, cantidad) => {
         if (estaEnLista(producto.id)){
             setCart(cart.map(item => {

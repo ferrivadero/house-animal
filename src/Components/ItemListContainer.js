@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import  ItemList  from "../Components/ItemList";
 import LinearProgress from '@mui/material/LinearProgress';
 import { useParams } from "react-router-dom";
-
+import { db } from "../firebase/firebase";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = ({greeting}) => {
 
@@ -10,25 +11,26 @@ const ItemListContainer = ({greeting}) => {
 
     const [listaProductos, setListaProductos] = useState([])
     const [loading, setLoading] = useState(true)
-    
 
-    const URL_BASE = "https://632bca1c1aabd837398bdca5.mockapi.io/productos"
-    const URL_CATEGORIA = "https://632e3a2e2cfd5ccc2afda51f.mockapi.io/categorias/"
 
     useEffect(() => {
-        const customFetch = async () => {
-            try{
-                const respuesta = await fetch( IdCategoria ? `${URL_CATEGORIA}${IdCategoria}` : URL_BASE)
-                const data = await respuesta.json()
-                setListaProductos(data)
-            }
-            catch{
-                console.log("error");
-            }
-            finally{
-                setLoading(false)
-            }}
-            customFetch()
+
+        const productsCollection = collection(db, 'productos')
+        const q = IdCategoria ? query(productsCollection, where('categoria', '==', IdCategoria)) : productsCollection
+
+        getDocs(q)
+        .then((data) =>{
+            const lista = data.docs.map((producto)=>{
+                return { ...producto.data(), id: producto.id }
+            })
+            setListaProductos(lista)
+        })
+        .catch(()=>{
+            console.log("errorrrrr")
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
     }, [IdCategoria])
     
     return (
