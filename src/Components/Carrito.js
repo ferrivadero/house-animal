@@ -1,11 +1,33 @@
 import { Button } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import "./carrito.css";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 const Carrito = () => {
     const { cart, borrar, totalDeCompra } = useContext(CartContext);
+    const [idCompra, setIdCompra] = useState(" ")
+
+    const orden = {
+        buyer: {
+            name: "pedro",
+            phone: "351123456",
+            email: "loquesea@proyecto.com"
+        },
+        items: cart.map((producto) => ({id: producto.id, title: producto.name, price: producto.precio, quantity: producto.cantidad})),
+        total: totalDeCompra,
+    }
+
+    const confirmarCompra = () => {
+        const db = getFirestore()
+        const ordenCollection = collection(db, 'orden')
+        addDoc(ordenCollection, orden)
+        .then(({ id }) => {
+            const idCompra = id
+            setIdCompra(idCompra)
+        })
+    }
 
     return (
         <>
@@ -65,6 +87,14 @@ const Carrito = () => {
                             <h1>Total de compra</h1>
                             <h2>${totalDeCompra}</h2>
                         </div>
+                        <div>
+                            <Button variant="contained" color="success" onClick={confirmarCompra}>Confirmar Compra</Button>
+                        </div>
+                    </div>
+                    <div>
+                            <h2 style={style.titulo}>
+                                {idCompra}
+                            </h2>
                     </div>
                 </>
             )}

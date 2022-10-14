@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import {CartContext} from "../context/CartContext";
-import { textDecoration } from "@chakra-ui/react";
+
 
 const CartWidget = () => {
 
