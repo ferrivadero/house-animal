@@ -7,7 +7,7 @@ const ItemCompra = () =>{
 
     return (
         <>
-            <Button style={style.boton} variant="contained" color="success"><Link style={style.textoBoton} to="/house-animal/carrito">Finalizar compra</Link></Button>
+            <Button style={style.boton} variant="contained" color="success"><Link style={style.textoBoton} to="/carrito">Finalizar compra</Link></Button>
         </>
     )
 }
