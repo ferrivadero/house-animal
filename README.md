@@ -1,3 +1,13 @@
-PROYECTO DE TIENDA DE PRODUCTOS PARA ANIMALES REALIZADO CON REACT
+## Animal House
+```
+# PROYECTO REALIZADO CON REACT
+```
+el proyecto trata de un ecomerce para una tienda de venta de articulos para mascotas desde comida hasta accesorios. Se puede navegar entre categorias directamente desde el navBar
 
-para el ultimo desafio se creo la coleccion de ordenes utilizando firebase y generando un id de compra que se muestra en pantalla una vez confirmada la compra
+se han utilizado diferentes librerias entre ellas:
+* chacra-ui
+* material ui
+* react router dom
+* sweet Alert
+
+

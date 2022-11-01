@@ -1,0 +1,12 @@
+.cartWidget{
+    display: flex;
+}
+
+.iconoCarrito{
+    color: black;
+}
+.contadorCarrito{
+    color: rgb(243, 0, 0);
+    font-size: 15px;
+    text-decoration: none;
+}

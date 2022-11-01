@@ -1,5 +1,5 @@
 import {React, useEffect, useState} from 'react';
-import ItemDetail from '../Components/ItemDetail';
+import ItemDetail from '../Components/ItemDetail/ItemDetail';
 import LinearProgress from '@mui/material/LinearProgress';
 import { useParams } from "react-router-dom";
 import { db } from "../firebase/firebase";

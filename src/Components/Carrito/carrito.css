@@ -1,0 +1,106 @@
+.contenedor{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 25px;
+}
+
+.contenedorListaCarrito{
+    width: 820px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorTitulos {
+    width: 800px;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    background-color: aliceblue;
+}
+
+.tituloProducto{
+    padding-left: 15px;
+}
+
+.tituloCantidad{
+    text-align: center;
+}
+
+.tituloTotal{
+    text-align: center;
+}
+
+.cardCarrito{
+    background-color: rgb(233, 232, 232);
+    height: 120px;
+    width: 800px;
+    border-top: solid black 1px;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+
+.imagenCard img{
+    height: 100px;
+    width: 80px;
+    object-fit: contain;
+}
+
+.nombrePrecio{
+    height: 100px;
+}
+
+.nombrePrecio span{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.itemCardUno{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: row;
+    height: 120px;
+}
+
+.itemCardDos{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 24px;
+}
+
+.boton{
+    height: 50px;
+    width: 90px;
+    padding-top: 10px;
+    align-self: center;
+}
+
+.itemCardTres{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.botonLimpiarCarrito{
+    height: auto;
+    margin-left: 30px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.formulario {
+    height: auto;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+

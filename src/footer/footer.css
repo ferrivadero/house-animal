@@ -1,0 +1,66 @@
+.contenedorFooter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer{
+    border-top: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(179, 228, 228);
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerColum{
+    width: 350px;
+    padding: 25px;
+}
+
+.titulosFooter{
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.textoMision{
+    text-transform: uppercase;
+    text-align: justify;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(146, 145, 145);
+}
+
+div ul li {
+    list-style: none;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(146, 145, 145);
+}
+
+.footerDos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(179, 228, 228);
+}
+
+h5{
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.imgPagos{
+    height: 25px;
+    padding: 5px;
+}
